@@ -44,7 +44,11 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
 nx.draw_networkx_edges(mst, pos, edge_color='r', width=2)
 
 # Добавляем легенду к изображению
-plt.legend(['Остовное дерево (Spanning Tree)'], loc='upper right')
+blue_patch = plt.Line2D([0], [0], color='lightblue', lw=4, label='Комнаты')
+black_patch = plt.Line2D([0], [0], color='black', lw=2, label='Кабели')
+red_patch = plt.Line2D([0], [0], color='r', lw=4, label='Остовное дерево (Spanning Tree)')
+plt.legend(handles=[blue_patch, black_patch, red_patch], loc='upper right')
+
 plt.title("Остовное дерево (Spanning Tree) и Полный Граф")
 plt.show()
 
